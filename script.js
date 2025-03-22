@@ -2,8 +2,11 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 
-let queue = [10,20,30,40,10,20,30,40,10,20,70];
+let queue = [];
 const boxHeight = 50;
+rearIndex=-1;
+frontIndex=-1;
+const maxQueueSize= 14;
 
 
 function drawQueue(frontIndex= -1,rearIndex = -1){
@@ -35,8 +38,22 @@ function drawQueue(frontIndex= -1,rearIndex = -1){
 
 }
 
-function insertValue(){
+function enQueue(){
+    const value = document.getElementById('enqueue-input').value ;
+    const enqueue = document.getElementById('enqueue-button');
+    if(value === '') alert("Enter a number");
     
+    if(queue.length < maxQueueSize){
+        queue.push(value);
+        rearIndex++;
+        drawQueue(frontIndex,rearIndex);
+    }else{
+        alert("queue overflow");
+    }
 }
 
-drawQueue(6,queue.length-1);
+function deQueue() {
+    frontIndex++;
+    drawQueue(frontIndex,rearIndex);
+}
+drawQueue();
