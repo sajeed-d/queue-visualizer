@@ -1,0 +1,12 @@
+body{
+    background-color: black;
+}
+
+canvas{
+    margin-top: 50px;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+h2,h1{
+    background-color: white;
+}
