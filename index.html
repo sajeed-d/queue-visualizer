@@ -13,61 +13,60 @@
         <canvas id="canvas" height="300px" width="600px" ></canvas>
     </div>
     <br>
-    <input type="number" id="enqueue-input" class="enqueue-input" placeholder="Enter A Number"><br>
-    <button class="enqueue-button" onclick="enQueue()">Enqueue</button>
-    <button class="dequeue-button" onclick="deQueue()">Dequeue</button>
-    <button class="delete-button" onclick="deleteQueue()">Delete</button>
-
+    <div class="input-and-buttons">
+        <div>
+            <input type="number" id="enqueue-input" class="enqueue-input" placeholder="Enter A Number">
+        </div>
+        <div>
+            <button class="enqueue-button" onclick="enQueue()">Enqueue</button>
+            <button class="enqueue-button" onclick="generateRandomNumber(),enQueue()">Enqueue-random</button>
+            <button class="dequeue-button" onclick="deQueue()">Dequeue</button>
+            <button class="delete-button" onclick="deleteQueue()">Delete</button>
+        </div>
+    </div>
     <div class="context-and-log">
         <div class="context">
-            <h2>Stack</h2>
-            <p>A stack is a linear data structure that follows the LIFO (Last In, First Out) principle. This means that the last element added is the first one to be removed.
-            </p>
-            <h2><strong>Basic Operations of Stack</strong></h2>
-    
-            <h3>Push (Insertion)</h3>
-            <p>- Adds an element to the top of the stack.<br>
-            - If the stack is full, it causes stack overflow.</p>
-    
-            <h3>Pop (Deletion)</h3>
-            <p>- Removes the top element of the stack.<br>
-            - If the stack is empty, it causes stack underflow.</p>
-            <div class="more-info">
-                <h2>Stack Overflow & Underflow</h2>
-    
-                <h3 id="overflow-section">Stack Overflow</h3>
-                <p>- Happens when you try to push an element into a full stack.<br>
-                - <strong>Example:</strong> In a fixed-size array implementation, adding beyond its limit.</p>
-    
-                <h3 id="underflow-section">Stack Underflow<h3>
-                <p>- Happens when you try to pop an element from an empty stack.<br>
-                - <strong>Example:</strong> Trying to remove an element from an empty stack.</p>
-                </div>
+            <h1>Queue - Everything You Need to Know</h1>
+
+            <div class="box">
+                <h2>🔹 What is a Queue?</h2>
+                <p>A queue is a <span class="highlight">linear data structure</span> that follows the <span class="highlight">FIFO (First In, First Out)</span> principle. This means that the element added first will be the first one to be removed, similar to a queue in real life (like waiting in line for a ticket).</p>
+            </div>
+        
+            <div class="box">
+                <h2>🔹 Front and Rear in a Queue</h2>
+                <ul>
+                    <li><span class="highlight">Front:</span> The index where elements are removed from the queue.</li>
+                    <li><span class="highlight">Rear:</span> The index where new elements are inserted into the queue.</li>
+                    <li>When the queue is <span class="highlight">empty</span>, both front and rear are set to <code>-1</code>.</li>
+                    <li>When an element is <span class="highlight">added</span>, the rear moves forward.</li>
+                    <li>When an element is <span class="highlight">removed</span>, the front moves forward.</li>
+                </ul>
+            </div>
+        
+            <div class="box">
+                <h2>🔹 Enqueue (Insertion in Queue)</h2>
+                <ul>
+                    <li>When adding an element, we insert it at the <span class="highlight">rear</span> position.</li>
+                    <li>If the queue is empty, both <span class="highlight">front and rear</span> are set to <code>0</code>.</li>
+                    <li>The <span class="highlight">rear pointer</span> increases by <code>1</code> with each new element.</li>
+                    <li>If <code>rear</code> reaches the max size of the queue, it causes a <span class="highlight">Queue Overflow</span> (meaning no more elements can be added).</li>
+                </ul>
+            </div>
+        
+            <div class="box">
+                <h2>🔹 Dequeue (Removing an Element from Queue)</h2>
+                <ul>
+                    <li>The element at the <span class="highlight">front</span> is removed.</li>
+                    <li>The <span class="highlight">front pointer</span> moves forward by <code>1</code>.</li>
+                    <li>If <code>front > rear</code>, the queue is empty, causing <span class="highlight">Queue Underflow</span> (no elements left to remove).</li>
+                    <li>In a <span class="highlight">regular queue</span>, removed elements leave empty spaces, reducing efficiency. <span class="highlight">Circular queues</span> solve this issue.</li>
+                </ul>
+            </div>
         </div>
-        <div class="log" id="log">
-            <h2>Stack</h2>
-            <p>A stack is a linear data structure that follows the LIFO (Last In, First Out) principle. This means that the last element added is the first one to be removed.
-            </p>
-            <h2><strong>Basic Operations of Stack</strong></h2>
-    
-            <h3>Push (Insertion)</h3>
-            <p>- Adds an element to the top of the stack.<br>
-            - If the stack is full, it causes stack overflow.</p>
-    
-            <h3>Pop (Deletion)</h3>
-            <p>- Removes the top element of the stack.<br>
-            - If the stack is empty, it causes stack underflow.</p>
-            <div class="more-info">
-                <h2>Stack Overflow & Underflow</h2>
-    
-                <h3 id="overflow-section">Stack Overflow</h3>
-                <p>- Happens when you try to push an element into a full stack.<br>
-                - <strong>Example:</strong> In a fixed-size array implementation, adding beyond its limit.</p>
-    
-                <h3 id="underflow-section">Stack Underflow<h3>
-                <p>- Happens when you try to pop an element from an empty stack.<br>
-                - <strong>Example:</strong> Trying to remove an element from an empty stack.</p>
-                </div>
+        <div class="log-container" >
+            <h1>Log</h1>
+            <div class="log" id="log"></div>
         </div>
     </div>
 </body>

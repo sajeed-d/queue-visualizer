@@ -1,5 +1,6 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+const log = document.getElementById("log");
 
 let queue = [];
 const boxHeight = 100;
@@ -40,9 +41,9 @@ function drawQueue() {
 
     // Logging the front and rear index positions
     if (frontIndex === -1 && rearIndex === -1) {
-        console.log("Queue is empty.");
+        log.innerHTML = "Queue is empty. <br>";
     } else {
-        console.log(`Front is at index: ${frontIndex}, Rear is at index: ${rearIndex}`);
+       log.innerHTML = log.innerHTML +`Front is at index: ${frontIndex}, Rear is at index: ${rearIndex} <br>`;
     }
 }
 
@@ -57,12 +58,14 @@ function enQueue() {
         drawQueue();
     } else {
         alert("Queue Overflow");
+        log.innerHTML += "Queue Overflow <br>";
     }
 }
 
 function deQueue() {
     if (frontIndex > rearIndex || frontIndex === -1) {
         alert("Queue Underflow");
+        log.innerHTML += "Queue Underflow <br>";
         deleteQueue();
     } else {
         frontIndex++;
@@ -75,6 +78,11 @@ function deleteQueue() {
     frontIndex = -1;
     rearIndex = -1;
     drawQueue();
+}
+
+function generateRandomNumber() {
+    let randomNum = Math.floor(Math.random() * 100); // Generates a number between 0-99
+    document.getElementById("enqueue-input").value = randomNum; // Sets the value in input
 }
 
 drawQueue();

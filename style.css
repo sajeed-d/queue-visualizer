@@ -1,29 +1,42 @@
-body{
+/* General styles for the body */
+body {
     background-color: black;
     color: white;
+    font-family: 'Poppins';
 }
 
-.canvas-container{
+/* Container for the canvas where the queue visualization is displayed */
+.canvas-container {
     border: 4px solid rgb(255, 255, 255);
     width: 1400px;
     margin: 20px;
 }
 
-canvas{
+/* Styling for the canvas element */
+canvas {
     margin-top: 50px;
     border: 2px solid rgb(0, 0, 0);
-
 }
 
-.head{
+/* Input and button container - aligning them at the center */
+.input-and-buttons {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;  
+    justify-content: center; 
+    text-align: center;
+}
+
+/* Styling for the main heading */
+.head {
     color: white;
-    font-family: 'Poppins';
     font-size: 50px;
     font-weight: bold;
     margin-left: 20px;
 }
 
-.enqueue-input{
+/* Input field for entering values to enqueue */
+.enqueue-input {
    width: 400px;
    padding: 0px 20px;
    border-radius: 6px;
@@ -36,7 +49,8 @@ canvas{
    margin-left: 20px;
 }
 
-button{
+/* General button styling */
+button {
     background-color: blue;
     color: rgb(255, 255, 255);
     font-family: 'Poppins';
@@ -49,17 +63,65 @@ button{
     border: none;
 }
 
-.enqueue-button{
+/* Enqueue button with left margin adjustment */
+.enqueue-button {
     margin-left: 20px;
 }
 
-.delete-button{
+/* Delete button with red background */
+.delete-button {
     background-color: red;
     color: white;
 }
 
-.context-and-log{
+/* Layout for context and log section */
+.context-and-log {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-width: 500px;
+    margin-top: 60px;
+}
+
+/* Context section styles */
+.context-and-log h1 {
+    color: #ffffff;
+    text-align: center;
+}
+
+h2 {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+p {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+/* Highlighted text inside explanations */
+.highlight {
+    font-weight: bold;
+    color: #d9534f;
+}
+
+ul {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+/* Box styling for different explanation sections */
+.box {
+    background-color: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Log section for displaying queue operations */
+.log {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
 }
