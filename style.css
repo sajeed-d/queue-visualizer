@@ -5,6 +5,10 @@ body {
     font-family: 'Poppins';
 }
 
+body::-webkit-scrollbar{
+    display: none;
+}
+
 /* Container for the canvas where the queue visualization is displayed */
 .canvas-container {
     border: 4px solid rgb(255, 255, 255);
@@ -96,17 +100,19 @@ h2 {
 p {
     font-size: 18px;
     color: #ffffff;
+    font-weight: 500;
 }
 
 /* Highlighted text inside explanations */
 .highlight {
     font-weight: bold;
-    color: #d9534f;
+    color: #ffffff;
 }
 
 ul {
     font-size: 18px;
     color: #ffffff;
+    font-weight: 500;
 }
 
 /* Box styling for different explanation sections */
